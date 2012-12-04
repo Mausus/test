@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>GeoDat</title>
+    
+  	<!-- Theme kommt hier rein -->
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+	
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">    
+    		
+</head>
+
+<body>
+<div data-role="page" id="geo" data-theme="b">
+		<div data-role="navbar" data-fullscreen="true">
+			<ul>
+				<li><a href="#./startseite.html" data-transition="flip" class="abd">Übersicht</a></li>
+				<li><a href="#./history.html" data-transition="flip" class="abd">Belege</a></li>
+				<li><a href="#" class="ui-btn-active">Where?</a></li>
+				<li><a href="#./camera.html" data-transition="flip" class="abd">Upload</a></li>
+			</ul>
+		</div>
+
+	<!--Karte-->
+	<section id="karte"></section>
+
+	<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#./index.html" data-icon="minus" data-transition="flip" data-iconpos="top">Logout</a></li>
+				<li><a href="#./list.html" data-icon="grid" data-transition="fade" data-iconpos="top">Liste</a></li>
+				<li><a href="#./help.html" data-icon="kontakt" data-transition="flip" data-iconpos="top">Help</a></li>
+			</ul>	
+		</div>
+	
+	</div>
+</div>
+
+</body>
+</html>

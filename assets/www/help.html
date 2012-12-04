@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Concevis AG Prototype</title>
+    
+  	<!-- Theme kommt hier rein -->
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!--Email validierung in time-->
+	
+	<!--<script>
+            $(function(){
+                var submit = $("input[type=submit]"); 
+                var email_feld = $("#email"); 
+               
+                $(submit).attr("disabled", "disabled");
+                
+                $(email_feld).bind("change blur", function(){
+                    $.post('validate.php', { 
+                        action: 'validate_email', 
+                        email: $(email_feld).val()
+                 }, function(data){
+                        if(data == 'error'){
+                            $(email_feld).css("border", "2px solid red"); 
+                            $(submit).attr("disabled", "disabled");
+                        }else {
+                          $(email_feld).css("border", "2px solid green"); 
+                          $(submit).removeAttr("disabled");}
+                    });
+                });
+           })
+    </script>	-->	
+</head>
+<body> 
+
+<!-- Startseite Seite -->
+<div data-role="page" id="helpvisual" data-theme="b">
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#./startseite.html" data-transition="slide">Übersicht</a></li>
+			<li><a href="#./history.html">Belege</a></li>
+			<li><a href="#./Geo.html" data-transition="flip">GeoData</a></li>
+			<li><a href="#./camera.html">PhotoUpload</a></li>
+		</ul>
+	</div>
+</div>
+ 
+<div data-role="content">
+	<form id = "emailkontakt" action='' method='POST'>
+		<div data-role="fieldcontain">
+			<label for="vname">Vorname</label>
+			<input type="text" id="vname" name="vname" placeholder="Vorname"/>
+
+			<label for="nname">Nachname</label>
+			<input type="text" id="nname" name="nname" placeholder="Nachname" />
+		</div>
+		<div data-role="fieldcontain">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" placeholder="MustermanMax@muster.de" />
+		</div>
+		<div data-role="fieldcontain">
+			<label for="nachricht">Nachricht</label>
+			<textarea cols="40" rows="8" name="emailmsg" id="nachricht"></textarea>
+		</div>
+	</form>
+
+	<input type="submit" data-role="button" data-icon="check" name="sendbtn" id="hsubmit" value="Email senden">
+
+
+	<script type="text/javascript">
+
+	/*Abschicken der Supportanfrage*/
+
+	$('#hsubmit').click(function() {
+	$('#emailkontakt').ready(function() {
+
+		var form = $('#emailkontakt');
+		var daten = form.serialize();
+	
+			$.post(ip +'email_interaction.php', daten, function(resp) {
+				alert(resp);
+			});
+		return false;
+		});
+	});
+
+	</script>
+
+</div>
+
+<div data-position="fixed" data-role="footer" data-theme="b" data-tap-toggle="false">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#./index.html" data-icon="minus"  data-transition="flip" data-iconpos="top">Logout</a></li>
+			<li><a href="#" data-icon="kontakt" data-iconpos="top" class="ui-btn-active">Help</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+
+</body>
+</html>
