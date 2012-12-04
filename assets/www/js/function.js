@@ -6,7 +6,7 @@ window.scrollTo(0,1);
 var ip = "http://192.168.1.31/Examp/php/";
 
 $("#karte").addClass("aktiv");
-  
+
 /*init der Kundendaten*/
 $('#forom').ready(function() {
 	$.ajax ({
@@ -87,8 +87,7 @@ function onPhotoURISuccess(imageURI) {
   largeImage.src = imageURI;
 }
 
-// A button will call this function
-//
+
 function capturePhoto() {
   // Take picture using device camera and retrieve image as base64-encoded string
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
@@ -97,7 +96,6 @@ function capturePhoto() {
     });
 }
 
-// A button will call this function
 function getPhoto(source) {
   // Retrieve image file location from specified source
   navigator.camera.getPicture(onPhotoURISuccess, onFail, { 
@@ -107,8 +105,7 @@ function getPhoto(source) {
     });
 }
 
-// Called if something bad happens.
-// 
+
 function onFail(message) {
   alert('Failed because: ' + message);
 }
